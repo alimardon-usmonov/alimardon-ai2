@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram AI Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Alimardon
+ExecStart=/root/Alimardon/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/root/Alimardon/.env
+
+[Install]
+WantedBy=multi-user.target
